@@ -1,7 +1,10 @@
 # Microsoft 365
 Scripts for managing assets and operations in Microsoft 365
 
-**Note: currently the script in 'main' are not all ready for use and have just been moved over from their original repo**
+## Standards
+- Functions should be named using the verb-noun nomenclature
+- The noun portion of a function's name should be prefixed with 'M365'
+  - e.g. Verb-M365Noun
 
 ## Connecting to Microsoft 365 with PowerShell
 To my colleagues using the tooling in this repo:
