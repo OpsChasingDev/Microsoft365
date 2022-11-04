@@ -29,6 +29,14 @@ function Add-M365CalendarPermission {
         [switch]$AllUser
     )
 
+    # checking if $Identity exists
+    try {
+        $null = Get-Mailbox -Identity $Identity
+        Write-Output "found mailbox $Identity"
+    }
+    catch {
+        Write-Output "cound not find mailbox for $Identity"
+    }
     if ($Identity) { Write-Output "Identity specified as $Identity" }
     if ($Permission) { Write-Output "Permission specified as $Permission" }
     if ($User) { Write-Output "working in the parameter set ParamSet_User" }
