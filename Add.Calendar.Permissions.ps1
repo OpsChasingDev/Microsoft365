@@ -41,8 +41,10 @@ function Add-M365CalendarPermission {
         [ValidateSet("Owner","PublishingEditor","Reviewer")]
         [string]$Permission,
 
+        [Parameter(ParameterSetName="ParamSet_User")]
         [string[]]$User,
-
+        
+        [Parameter(ParameterSetName="ParamSet_AllUser")]
         [switch]$AllUser
     )
 }
