@@ -33,6 +33,7 @@ function {
 #>
 
 function Add-M365CalendarPermission {
+    [Cmdletbinding(DefaultParameterSetName="default")]
     param (
         [Parameter(Mandatory = $true)]
         [string]$Identity,
