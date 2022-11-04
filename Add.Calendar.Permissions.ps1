@@ -34,8 +34,7 @@ function {
 
 function Add-M365CalendarPermission {
     param (
-        [Parameter(ParameterSetName = "User",
-            Mandatory = $true)]
+        [Parameter(Mandatory = $true)]
         [string]$Identity
     )
 }
