@@ -35,6 +35,10 @@ function {
 function Add-M365CalendarPermission {
     param (
         [Parameter(Mandatory = $true)]
-        [string]$Identity
+        [string]$Identity,
+
+        [Parameter(Mandatory = $true)]
+        [ValidateSet("Owner","PublishingEditor","Reviewer")]
+        [string]$Permission
     )
 }
