@@ -32,3 +32,10 @@ function {
     - (2) All users' calendar access is being granted to Identity
 #>
 
+function Add-M365CalendarPermission {
+    param (
+        [Parameter(ParameterSetName = "User",
+            Mandatory = $true)]
+        [string]$Identity
+    )
+}
