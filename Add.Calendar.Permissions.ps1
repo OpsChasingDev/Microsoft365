@@ -1,12 +1,18 @@
 <#
 function {
     param (
-        [string]TargetUser
-        [string]Permission
-        [switch]AllExisting
-        [string[]]OtherUser
-        [switch]GrantTarget
-        [switch]GrantOther
+        [Paramset 1 and 2]
+        [string]Identity,
+
+        [Paramset 1 and 2]
+        [ValidateSet()]
+        [string]Permission,
+        
+        [Paramset 1]
+        [string[]]User
+        
+        [Paramset 2]
+        [switch]AllUsers,
     )
 }
 
