@@ -33,24 +33,24 @@ function {
 #>
 
 function Add-M365CalendarPermission {
-    [Cmdletbinding(DefaultParameterSetName="default")]
+    [Cmdletbinding(DefaultParameterSetName = "default")]
     param (
         [Parameter(Mandatory = $true)]
         [string]$Identity,
 
         [Parameter(Mandatory = $true)]
-        [ValidateSet("Owner","PublishingEditor","Reviewer")]
+        [ValidateSet("Owner", "PublishingEditor", "Reviewer")]
         [string]$Permission,
 
-        [Parameter(ParameterSetName="ParamSet_User")]
+        [Parameter(ParameterSetName = "ParamSet_User")]
         [string[]]$User,
         
-        [Parameter(ParameterSetName="ParamSet_AllUser")]
+        [Parameter(ParameterSetName = "ParamSet_AllUser")]
         [switch]$AllUser
     )
 
-    if ($Identity) { Write-Output "Identity specified as $Identity"}
-    if ($Permission) { Write-Output "Permission specified as $Permission"}
-    if ($User) { Write-Output "working in the parameter set ParamSet_User"}
-    if ($AllUser) {Write-Output "working in the parameter set ParamSet_AllUser"}
+    if ($Identity) { Write-Output "Identity specified as $Identity" }
+    if ($Permission) { Write-Output "Permission specified as $Permission" }
+    if ($User) { Write-Output "working in the parameter set ParamSet_User" }
+    if ($AllUser) { Write-Output "working in the parameter set ParamSet_AllUser" }
 }
