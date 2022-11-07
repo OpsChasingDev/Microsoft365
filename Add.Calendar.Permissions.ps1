@@ -50,8 +50,8 @@ function Add-M365CalendarPermission {
             $InvalidUser += $u
         }
     }
-    Write-Output "INVALID USERS DETECTED: `n $InvalidUser"
     if ($InvalidUser.Count -gt 0) {
+        Write-Output "INVALID USERS DETECTED:"`n $InvalidUser.Split(' ')
         Write-Error "The mailbox for at least one specified value of -User was not found.  No changes have been made."
         break
     }
