@@ -44,7 +44,7 @@ function Add-M365CalendarPermission {
     $InvalidUser = @()
     foreach ($u in $User) {
         try {
-            Get-Mailbox -Identity $u -ErrorAction Stop
+            $null = Get-Mailbox -Identity $u -ErrorAction Stop
             Write-Verbose "Found mailbox $u"
         }
         catch {
