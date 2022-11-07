@@ -31,7 +31,7 @@ function Add-M365CalendarPermission {
 
     # checking if $Identity exists
     try {
-        $null = Get-Mailbox -Identity $Identity
+        $null = Get-Mailbox -Identity $Identity -ErrorAction Stop
         Write-Output "found mailbox $Identity"
     }
     catch {
