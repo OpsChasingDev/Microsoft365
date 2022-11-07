@@ -32,13 +32,25 @@ function Add-M365CalendarPermission {
     # checking if $Identity exists
     try {
         $null = Get-Mailbox -Identity $Identity -ErrorAction Stop
-        Write-Verbose "found mailbox $Identity"
+        Write-Verbose "Found mailbox $Identity"
     }
     catch {
-        Write-Verbose "cound not find mailbox for $Identity"
+        Write-Verbose "Cound not find mailbox for $Identity"
     }
+
+    # checking if $User[] exist(s)
+    foreach ($u in $User) {
+        try {
+            Get-Mailbox -Identity $u -ErrorAction Stop
+            Write-Verbose "Found mailbox $u"
+        }
+        catch {
+            Write-Verbose "Could not find mailbox for $u"
+        }
+    }
+    
     if ($Identity) { Write-Verbose "Identity specified as $Identity" }
     if ($Permission) { Write-Verbose "Permission specified as $Permission" }
-    if ($User) { Write-Verbose "working in the parameter set ParamSet_User" }
-    if ($AllUser) { Write-Verbose "working in the parameter set ParamSet_AllUser" }
+    if ($User) { Write-Verbose "Working in the parameter set ParamSet_User" }
+    if ($AllUser) { Write-Verbose "Working in the parameter set ParamSet_AllUser" }
 }
