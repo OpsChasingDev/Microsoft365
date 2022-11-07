@@ -39,6 +39,7 @@ function Add-M365CalendarPermission {
     }
 
     # checking if $User[] exist(s)
+    $InvalidUser = @()
     foreach ($u in $User) {
         try {
             Get-Mailbox -Identity $u -ErrorAction Stop
@@ -46,8 +47,10 @@ function Add-M365CalendarPermission {
         }
         catch {
             Write-Verbose "Could not find mailbox for $u"
+            $InvalidUser += $u
         }
     }
+    Write-Output "INVALID USERS DETECTED: `n $InvalidUser"
     
     if ($Identity) { Write-Verbose "Identity specified as $Identity" }
     if ($Permission) { Write-Verbose "Permission specified as $Permission" }
