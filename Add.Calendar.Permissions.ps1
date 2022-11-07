@@ -36,6 +36,8 @@ function Add-M365CalendarPermission {
     }
     catch {
         Write-Verbose "Cound not find mailbox for $Identity"
+        Write-Error "The mailbox for $Identity was not found.  No changes haves been made."
+        break
     }
 
     # checking if $User[] exist(s)
