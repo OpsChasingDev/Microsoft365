@@ -97,7 +97,4 @@ function Add-M365CalendarPermission {
             break
         }
     }
-
-
-    if ($AllUser) { Write-Verbose "Working in the parameter set ParamSet_AllUser" }
 }
