@@ -58,8 +58,11 @@ function Add-M365CalendarPermission {
         break
     }
     
-    if ($Identity) { Write-Verbose "Identity specified as $Identity" }
-    if ($Permission) { Write-Verbose "Permission specified as $Permission" }
-    if ($User) { Write-Verbose "Working in the parameter set ParamSet_User" }
+    # ParamSet_User logic - deals with the Identity and specified user(s)
+    if ($User) {
+        Write-Verbose "Working in the parameter set ParamSet_User"
+    }
+
+
     if ($AllUser) { Write-Verbose "Working in the parameter set ParamSet_AllUser" }
 }
