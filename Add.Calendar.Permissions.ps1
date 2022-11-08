@@ -1,15 +1,13 @@
 <#
 - set up connection to 365 exchange using the module ExchangeOnlineManagement and the Connect-ExchangeOnline cmdlet
 
-- identity is first checked to make sure it exists
-- if user param is specified, the validity of those accounts is checked as well
-- user is prompted to choose one of the below scenarios based on paramset:
-    Paramset 1
-    - (1) Identity's calendar access is being granted to specified users
-    - (2) Specified users' calendar access is being granted to Identity
-    Paramset 2
-    - (1) Identity's calendar access is being granted to all users
-    - (2) All users' calendar access is being granted to Identity
+Next Steps:
+- add ShouldProcess support
+- add ParamSet_User option 1
+- add ParamSet_User option 2
+- add ParamSet_AllUser option 1
+- add ParamSet_AllUser option 2
+
 #>
 
 function Add-M365CalendarPermission {
