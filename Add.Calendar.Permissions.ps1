@@ -74,7 +74,7 @@ function Add-M365CalendarPermission {
             Write-Verbose "Operation for granting $Identity access to calendar of specified users"
         }
         else {
-            Write-Output "Not a valid selection.  No changes have been made."
+            Write-Warning "Not a valid selection.  No changes have been made."
             break
         }
     }
