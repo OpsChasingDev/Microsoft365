@@ -79,6 +79,8 @@ function Add-M365CalendarPermission {
         }
     }
 
+    # *** MIRROR BLOCK ABOVE HERE FOR ParamSet_AllUser LOGIC ***
+
 
     if ($AllUser) { Write-Verbose "Working in the parameter set ParamSet_AllUser" }
 }
