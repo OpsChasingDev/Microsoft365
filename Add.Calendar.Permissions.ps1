@@ -79,7 +79,26 @@ function Add-M365CalendarPermission {
         }
     }
 
-    # *** MIRROR BLOCK ABOVE HERE FOR ParamSet_AllUser LOGIC ***
+    # ParamSet_AllUser logic - deals with the Identity and specified user(s)
+    if ($AllUser) {
+        Write-Verbose "Working in the parameter set ParamSet_AllUser"
+        Write-Host `n"Choose one of the below two scenarios:" -ForegroundColor 'Yellow' -BackgroundColor 'Black'
+        Write-Host "  (1) Identity's calendar access is being granted to all users."
+        Write-Host "  (2) All users' calendar access is being granted to Identity."
+        $Selection_AllUser = Read-Host "Selection"
+        Write-Verbose "Selected option $Selection_AllUser"
+
+        if ($Selection_AllUser -eq '1') {
+            Write-Verbose "Operation for granting all users access to calendar of $Identity"
+        }
+        elseif ($Selection_AllUser -eq '2') {
+            Write-Verbose "Operation for granting $Identity access to calendar of all users"
+        }
+        else {
+            Write-Warning "Not a valid selection.  No changes have been made."
+            break
+        }
+    }
 
 
     if ($AllUser) { Write-Verbose "Working in the parameter set ParamSet_AllUser" }
