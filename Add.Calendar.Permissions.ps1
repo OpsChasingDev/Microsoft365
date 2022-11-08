@@ -65,7 +65,7 @@ function Add-M365CalendarPermission {
         Write-Host "  (1) Identity's calendar access is being granted to specified users."
         Write-Host "  (2) Specified users' calendar access is being granted to Identity."
         $Selection_User = Read-Host "Selection"
-        Write-Output $Selection_User
+        Write-Verbose "Selected option $Selection_User"
     }
 
 
