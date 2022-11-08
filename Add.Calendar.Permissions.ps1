@@ -61,6 +61,11 @@ function Add-M365CalendarPermission {
     # ParamSet_User logic - deals with the Identity and specified user(s)
     if ($User) {
         Write-Verbose "Working in the parameter set ParamSet_User"
+        Write-Host `n"Choose one of the below two scenarios:" -ForegroundColor 'Yellow' -BackgroundColor 'Black'
+        Write-Host "  (1) Identity's calendar access is being granted to specified users."
+        Write-Host "  (2) Specified users' calendar access is being granted to Identity."
+        $Selection_User = Read-Host "Selection"
+        Write-Output $Selection_User
     }
 
 
