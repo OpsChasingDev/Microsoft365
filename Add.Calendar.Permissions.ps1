@@ -73,7 +73,7 @@ function Add-M365CalendarPermission {
             }
         }
         elseif ($Selection_User -eq '2') {
-            if ($PSCmdlet.ShouldProcess("$Identity", "Granting $Identity access to specified users' calendars with permission $Permission...")) {
+            if ($PSCmdlet.ShouldProcess("$User", "Granting $Identity access to calendars with permission $Permission...")) {
                 Write-Verbose "Operation for granting $Identity access to calendar of specified users"
             }
         }
