@@ -93,7 +93,9 @@ function Add-M365CalendarPermission {
         Write-Verbose "Selected option $Selection_AllUser"
 
         if ($Selection_AllUser -eq '1') {
-            Write-Verbose "Operation for granting all users access to calendar of $Identity"
+            if ($PSCmdlet.ShouldProcess("$Identity", "Granting ALL users access to calendar with permission $Permission...")) {
+                Write-Verbose "Operation for granting all users access to calendar of $Identity"
+            }
         }
         elseif ($Selection_AllUser -eq '2') {
             Write-Verbose "Operation for granting $Identity access to calendar of all users"
