@@ -11,7 +11,8 @@ Next Steps:
 #>
 
 function Add-M365CalendarPermission {
-    [Cmdletbinding(DefaultParameterSetName = "default")]
+    [Cmdletbinding(DefaultParameterSetName = "default",
+        SupportsShouldProcess)]
     param (
         [Parameter(Mandatory = $true)]
         [string]$Identity,
