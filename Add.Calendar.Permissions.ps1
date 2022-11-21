@@ -2,7 +2,6 @@
 - set up connection to 365 exchange using the module ExchangeOnlineManagement and the Connect-ExchangeOnline cmdlet
 
 Next Steps:
-- add ShouldProcess support
 - add ParamSet_User option 1
 - add ParamSet_User option 2
 - add ParamSet_AllUser option 1
