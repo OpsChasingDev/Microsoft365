@@ -6,6 +6,7 @@ Next Steps:
 - add ParamSet_User option 2
 - add ParamSet_AllUser option 1
 - add ParamSet_AllUser option 2
+- add ability to specify an exception along with AllUsers
 
 #>
 
