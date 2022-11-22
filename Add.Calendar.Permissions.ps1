@@ -103,7 +103,7 @@ function Add-M365CalendarPermission {
 
         if ($Selection_AllUser -eq '1') {
             if ($PSCmdlet.ShouldProcess("$Identity", "Granting the users listed above access to calendar with permission $Permission...")) {
-                Write-Verbose "Operation for granting all users access to calendar of $Identity"
+                Write-Verbose "Operation for granting all listed users access to calendar of $Identity"
                 foreach ($m in $Mailbox) {
                     Add-MailboxFolderPermission -Identity ($Identity + ":\calendar") -User $m.WindowsEmailAddress -AccessRights $Permission
                 }
@@ -111,7 +111,10 @@ function Add-M365CalendarPermission {
         }
         elseif ($Selection_AllUser -eq '2') {
             if ($PSCmdlet.ShouldProcess("ALL Users", "Granting $Identity access to calendar with permissions $Permission...")) {
-                Write-Verbose "Operation for granting $Identity access to calendar of all users"
+                Write-Verbose "Operation for granting $Identity access to calendar of all listed users"
+                foreach ($m in $Mailbox) {
+                    Add-MailboxFolderPermission -Identity ($m.WindowsEmailAddress + ":\calendar") -User $Identity -AccessRights $Permission
+                }
             }
         }
         else {
