@@ -2,7 +2,6 @@
 - set up connection to 365 exchange using the module ExchangeOnlineManagement and the Connect-ExchangeOnline cmdlet
 
 Next Steps:
-- add ParamSet_AllUser option 1
 - add ParamSet_AllUser option 2
 - add ability to specify an exception along with AllUsers
 
@@ -103,8 +102,11 @@ function Add-M365CalendarPermission {
 
 
         if ($Selection_AllUser -eq '1') {
-            if ($PSCmdlet.ShouldProcess("$Identity", "Granting ALL users access to calendar with permission $Permission...")) {
+            if ($PSCmdlet.ShouldProcess("$Identity", "Granting the users listed above access to calendar with permission $Permission...")) {
                 Write-Verbose "Operation for granting all users access to calendar of $Identity"
+                foreach ($m in $Mailbox) {
+                    Add-MailboxFolderPermission -Identity ($Identity + ":\calendar") -User $m.WindowsEmailAddress -AccessRights $Permission
+                }
             }
         }
         elseif ($Selection_AllUser -eq '2') {
