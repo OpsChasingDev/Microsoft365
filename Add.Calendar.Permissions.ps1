@@ -90,13 +90,17 @@ function Add-M365CalendarPermission {
     # ParamSet_AllUser logic - deals with the Identity and specified user(s)
     if ($AllUser) {
         Write-Verbose "Working in the parameter set ParamSet_AllUser"
+
+        $Mailbox = Get-Mailbox | Where-Object {$_.WindowsEmailAddress -notlike "DiscoverySearchMailbox*"}
+        Write-Host `n"The below mailboxes will be targeted for the operation:" -ForegroundColor 'Yellow' -BackgroundColor 'Black'
+        Write-Output $Mailbox.WindowsEmailAddress | Sort-Object $_
+
         Write-Host `n"Choose one of the below two scenarios:" -ForegroundColor 'Yellow' -BackgroundColor 'Black'
         Write-Host "  (1) Identity's calendar access is being granted to all users."
         Write-Host "  (2) All users' calendar access is being granted to Identity."
         $Selection_AllUser = Read-Host "Selection"
         Write-Verbose "Selected option $Selection_AllUser"
 
-        $Mailbox = Get-Mailbox | Where-Object {$_.WindowsEmailAddress -notlike "DiscoverySearchMailbox*"}
 
         if ($Selection_AllUser -eq '1') {
             if ($PSCmdlet.ShouldProcess("$Identity", "Granting ALL users access to calendar with permission $Permission...")) {
