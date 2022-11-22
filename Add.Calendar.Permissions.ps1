@@ -96,6 +96,8 @@ function Add-M365CalendarPermission {
         $Selection_AllUser = Read-Host "Selection"
         Write-Verbose "Selected option $Selection_AllUser"
 
+        $Mailbox = Get-Mailbox | Where-Object {$_.WindowsEmailAddress -notlike "DiscoverySearchMailbox*"}
+
         if ($Selection_AllUser -eq '1') {
             if ($PSCmdlet.ShouldProcess("$Identity", "Granting ALL users access to calendar with permission $Permission...")) {
                 Write-Verbose "Operation for granting all users access to calendar of $Identity"
