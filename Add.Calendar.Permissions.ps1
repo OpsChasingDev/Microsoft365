@@ -30,8 +30,16 @@ function Add-M365CalendarPermission {
     .NOTES
         Git repo: https://github.com/OpsChasingDev/Microsoft365/blob/main/Add.Calendar.Permissions.ps1
     .EXAMPLE
-        Test-MyTestFunction -Verbose
-        Explanation of the function or its result. You can include multiple examples with additional .EXAMPLE lines
+        Add-M365CalendarPermission -Identity robert.stapleton@savylabs.net -User api@savylabs.net -Permission "PublishingEditor" -WhatIf
+
+Choose one of the below two scenarios:
+  (1) Identity's calendar access is being granted to specified users.
+  (2) Specified users' calendar access is being granted to Identity.
+Selection: 1
+What if: Performing the operation "Granting api@savylabs.net access to calendar with permission PublishingEditor..." on target "robert.stapleton@savylabs.net".
+        
+        The user robert.stapleton@savylabs.net is granted PublishingEditor permissions to the calendar of api@savylabs.net.  Note how option 1 was selected when prompted.
+    
     #>
     
     
