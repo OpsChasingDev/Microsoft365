@@ -93,7 +93,6 @@ What if: Performing the operation "Granting the users listed above access to cal
         Notice how a list of users collected in the -AllUser parameter is provided before making the option selection.
     #>
     
-    
     [Cmdletbinding(DefaultParameterSetName = "default",
         SupportsShouldProcess,
         ConfirmImpact = "Medium")]
