@@ -12,6 +12,7 @@ function Add-M365CalendarPermission {
         Adds permissions to Microsoft 365 mailbox calendars.
     .DESCRIPTION
         Adds permissions to Microsoft 365 mailbox calendars.  A connection to a Microsoft 365 tenant must first be established before use.
+        Users are identified by their full, primary SMTP address.
         Options exist to both grant users permissions to an Identity's calendar or to grant the Identity permissions to users' calendars.
         Both of the above options are included in two ParameterSets, one for dealing with selecting other users individually, and another for specifying all other users.
         Between all of the above options, a total of four scenarios exist for using this function:
