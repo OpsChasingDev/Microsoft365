@@ -51,6 +51,16 @@ What if: Performing the operation "Granting robert.stapleton@savylabs.net access
 
         The user robert.stapleton@savylabs.net is granted PublishingEditor permissions to the calendar of api@savylabs.net.  Note how option 2 was selected when prompted.
         Notice how the syntax of this command is identical to that of Example 1, but the resulting operation was flipped as a result of selecting option 2 instead of option 1.
+    .EXAMPLE
+        Add-M365CalendarPermission -Identity api@savylabs.net -User robert.stapleton@savylabs.net, test.user2@savylabs.net -Permission "PublishingEditor" -WhatIf
+
+Choose one of the below two scenarios:
+  (1) Identity's calendar access is being granted to specified users.
+  (2) Specified users' calendar access is being granted to Identity.
+Selection: 1
+What if: Performing the operation "Granting robert.stapleton@savylabs.net test.user2@savylabs.net access to calendar with permission PublishingEditor..." on target "api@savylabs.net".
+
+        The users robert.stapleton@savylabs.net and test.user2@savylabs.net are being granted PublishingEditor permissions to the calendar of api@savylabs.net.
     #>
     
     
