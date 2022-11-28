@@ -27,7 +27,7 @@ function Add-M365CalendarPermission {
         Entering the ParamSet_User options is done by specifying the -User parameter.
         Entering the ParamSet_AllUser options is done by specifying the -AllUser parameter.
     .NOTES
-        Information or caveats about the function e.g. 'This function is not supported in Linux'
+        Git repo: https://github.com/OpsChasingDev/Microsoft365/blob/main/Add.Calendar.Permissions.ps1
     .LINK
         Specify a URI to a help page, this will show when Get-Help -Online is used.
     .EXAMPLE
