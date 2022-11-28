@@ -61,6 +61,20 @@ Selection: 1
 What if: Performing the operation "Granting robert.stapleton@savylabs.net test.user2@savylabs.net access to calendar with permission PublishingEditor..." on target "api@savylabs.net".
 
         The users robert.stapleton@savylabs.net and test.user2@savylabs.net are being granted PublishingEditor permissions to the calendar of api@savylabs.net.
+    .EXAMPLE
+        Add-M365CalendarPermission -Identity test.user2@savylabs.net -AllUser -Permission "Owner" -WhatIf
+
+The below mailboxes will be targeted for the operation:
+API@savylabs.net
+Robert.Stapleton@savylabs.net
+
+Choose one of the below two scenarios:
+  (1) Identity's calendar access is being granted to all users.
+  (2) All users' calendar access is being granted to Identity.
+Selection: 1
+What if: Performing the operation "Granting the users listed above access to calendar with permission Owner..." on target "test.user2@savylabs.net".
+
+        All non-system users in the Microsoft 365 tenant are granted Owner permissions to the calendar of test.user2@savylabs.net.
     #>
     
     
