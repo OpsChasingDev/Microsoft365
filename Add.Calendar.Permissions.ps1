@@ -75,6 +75,7 @@ Selection: 1
 What if: Performing the operation "Granting the users listed above access to calendar with permission Owner..." on target "test.user2@savylabs.net".
 
         All non-system users in the Microsoft 365 tenant are granted Owner permissions to the calendar of test.user2@savylabs.net.
+        Notice how a list of users collected in the -AllUser parameter is provided before making the option selection.
     .EXAMPLE
         Add-M365CalendarPermission -Identity test.user2@savylabs.net -AllUser -Permission "Owner" -ExcludeUser api@savylabs.net -WhatIf
 
@@ -89,6 +90,7 @@ What if: Performing the operation "Granting the users listed above access to cal
 
         Like in Example 4, all non-system users in the Microsoft 365 tenant are granted Owner permissions to the calendar of test.user2@savylabs.net.
         The difference in this example is we have specified the -ExcludeUser parameter because we wanted all users except the api@savylabs.net user to be granted permissions to this calendar.
+        Notice how a list of users collected in the -AllUser parameter is provided before making the option selection.
     #>
     
     
