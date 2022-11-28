@@ -22,7 +22,10 @@ function Add-M365CalendarPermission {
         [string[]]$User,
         
         [Parameter(ParameterSetName = "ParamSet_AllUser")]
-        [switch]$AllUser
+        [switch]$AllUser,
+
+        [Parameter(ParameterSetName = "ParamSet_AllUser")]
+        [switch]$ExcludeUser
     )
 
     # checking if $Identity exists
