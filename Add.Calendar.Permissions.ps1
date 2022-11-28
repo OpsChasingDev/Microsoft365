@@ -25,7 +25,7 @@ function Add-M365CalendarPermission {
         [switch]$AllUser,
 
         [Parameter(ParameterSetName = "ParamSet_AllUser")]
-        [string]$ExcludeUser
+        [string[]]$ExcludeUser
     )
 
     # checking if $Identity exists
@@ -92,7 +92,7 @@ function Add-M365CalendarPermission {
     if ($AllUser) {
         Write-Verbose "Working in the parameter set ParamSet_AllUser"
 
-        $Mailbox = Get-Mailbox | Where-Object {$_.WindowsEmailAddress -notlike "DiscoverySearchMailbox*" -and $_.WindowsEmailAddress -ne $Identity -and $_.WindowsEmailAddress -notcontains $ExcludeUser}
+        $Mailbox = Get-Mailbox | Where-Object {$_.WindowsEmailAddress -notlike "DiscoverySearchMailbox*" -and $_.WindowsEmailAddress -ne $Identity -and $_.WindowsEmailAddress -notin $ExcludeUser}
         Write-Host `n"The below mailboxes will be targeted for the operation:" -ForegroundColor 'Yellow' -BackgroundColor 'Black'
         Write-Output $Mailbox.WindowsEmailAddress | Sort-Object $_
 
