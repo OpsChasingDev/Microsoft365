@@ -19,13 +19,13 @@ function Add-M365CalendarPermission {
             [ParamSet_User]
         1) Identity's calendar access is being granted to specified users.
         2) Specified users' calendar access is being granted to Identity.
-        
+
             [ParamSet_AllUser]
         3) Identity's calendar access is being granted to all users.
         4) All users' calendar access is being granted to Identity.
 
         Entering the ParamSet_User options is done by specifying the -User parameter.
-        Entering the ParamSet_AllUser options is done by specifying the -AllUser parameter
+        Entering the ParamSet_AllUser options is done by specifying the -AllUser parameter.
     .NOTES
         Information or caveats about the function e.g. 'This function is not supported in Linux'
     .LINK
