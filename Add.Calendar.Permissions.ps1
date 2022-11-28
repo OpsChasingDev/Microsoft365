@@ -2,7 +2,7 @@
 - set up connection to 365 exchange using the module ExchangeOnlineManagement and the Connect-ExchangeOnline cmdlet
 
 Next Steps:
-- add ability to specify an exception along with AllUsers
+- write help file
 
 #>
 
@@ -98,7 +98,7 @@ function Add-M365CalendarPermission {
                 $_.WindowsEmailAddress -ne $Identity -and
                 $_.WindowsEmailAddress -notin $ExcludeUser
             }
-            
+
         Write-Host `n"The below mailboxes will be targeted for the operation:" -ForegroundColor 'Yellow' -BackgroundColor 'Black'
         Write-Output $Mailbox.WindowsEmailAddress | Sort-Object $_
 
