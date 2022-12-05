@@ -101,7 +101,11 @@ What if: Performing the operation "Granting the users listed above access to cal
         [Parameter(Mandatory = $true)]
         [string]$Identity,
 
-        # Specifies the permission level being granted
+        <# Specifies the permission level being granted; can currently only specify the below:
+        - Owner (full permissions)
+        - PublishingEditor (read/write)
+        - Reviewer (read only)
+        #>
         [Parameter(Mandatory = $true)]
         [ValidateSet("Owner", "PublishingEditor", "Reviewer")]
         [string]$Permission,
