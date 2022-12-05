@@ -1,11 +1,3 @@
-<#
-- set up connection to 365 exchange using the module ExchangeOnlineManagement and the Connect-ExchangeOnline cmdlet
-
-Next Steps:
-- write help file
-
-#>
-
 function Add-M365CalendarPermission {
     <#
     .SYNOPSIS
