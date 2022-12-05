@@ -93,7 +93,7 @@ What if: Performing the operation "Granting the users listed above access to cal
         Notice how a list of users collected in the -AllUser parameter is provided before making the option selection.
     #>
     
-    [Cmdletbinding(DefaultParameterSetName = "default",
+    [Cmdletbinding(DefaultParameterSetName = "ParamSet_User",
         SupportsShouldProcess,
         ConfirmImpact = "Medium")]
     param (
@@ -111,11 +111,13 @@ What if: Performing the operation "Granting the users listed above access to cal
         [string]$Permission,
 
         # The user(s) which will access the Identity or be shared to the Identity
-        [Parameter(ParameterSetName = "ParamSet_User")]
+        [Parameter(ParameterSetName = "ParamSet_User",
+                    Mandatory = $true)]
         [string[]]$User,
         
         # A shortcut when all users need to be specified, used in place of -User param
-        [Parameter(ParameterSetName = "ParamSet_AllUser")]
+        [Parameter(ParameterSetName = "ParamSet_AllUser",
+                    Mandatory = $true)]
         [switch]$AllUser,
 
         # A way of making an exclusion when using the -AllUser param
