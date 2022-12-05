@@ -97,19 +97,24 @@ What if: Performing the operation "Granting the users listed above access to cal
         SupportsShouldProcess,
         ConfirmImpact = "Medium")]
     param (
+        # Specifies the single Identity to be shared to User or granted access to User
         [Parameter(Mandatory = $true)]
         [string]$Identity,
 
+        # Specifies the permission level being granted
         [Parameter(Mandatory = $true)]
         [ValidateSet("Owner", "PublishingEditor", "Reviewer")]
         [string]$Permission,
 
+        # The user(s) which will access the Identity or be shared to the Identity
         [Parameter(ParameterSetName = "ParamSet_User")]
         [string[]]$User,
         
+        # A shortcut when all users need to be specified, used in place of -User param
         [Parameter(ParameterSetName = "ParamSet_AllUser")]
         [switch]$AllUser,
 
+        # A way of making an exclusion when using the -AllUser param
         [Parameter(ParameterSetName = "ParamSet_AllUser")]
         [string[]]$ExcludeUser
     )
